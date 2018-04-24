@@ -13,6 +13,7 @@ package com.yuxiangzhi.test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -29,7 +30,7 @@ public class springbootAndSpringmvc {
     //  获取配置文件中的值
     Environment environment;
     @RequestMapping("/demo")
-    public String get(){
-        return "helloSpringboot"+"\t"+environment.getProperty("url");
+    public String get(@RequestParam int a){
+        return "helloSpringboot"+a+"\t"+environment.getProperty("url");
     }
 }
